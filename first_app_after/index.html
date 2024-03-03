@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>你好! {{name}}</h1>
+        
+        <!-- 可省略v-bind，只留: -->
+        <a v-bind:href="link">連結</a>
+
+        <ul>
+            <!-- 訪問array -->
+            <li v-for="todo in todos">
+                {{ todo.content }}
+            </li>
+
+            <!-- 訪問array索引 -->
+            <!-- <li v-for="(todo,index) in todos">
+                {{index}}, {{todo}}
+            </li> -->
+
+            <!-- 遍歷對象數組 -->
+            <li v-for="todo in todos">
+                <input type="checkbox" :checked=todo.complete>{{ todo.content }}
+            </li>
+        </ul>
+
+        <!-- v-if, v-else-if, v-else, v-show -->
+        <!-- v-show 會設置display屬性隱藏元素 -->
+        <p v-if="books.length === 0">No books</p>
+        <h2 v-else-if="books.length === 1">{{ books[0] }}</h2>
+        <ul v-else>
+            <li v-for="book in books"> {{ book }} </li>
+        </ul>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
