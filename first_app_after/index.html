@@ -39,6 +39,17 @@
             <li v-for="book in books"> {{ book }} </li>
         </ul>
 
+        <!-- 註冊事件 -->
+        <!-- v-on:事件名 or @事件名 -->
+        <div class="question">
+            <p>Q:Vue is what kind of framework?</p>
+            <p v-show="showAnswer" class="answer">
+                A:Vue is a kind of gradually framework.
+            </p>
+            <!-- toggleAnswer為事件監聽處理數 -->
+            <button @click="toggleAnswer">{{ label }}</button> 
+        </div>
+
     </div>
     <script src="index.js"></script>
 </body>
