@@ -42,7 +42,7 @@ const app = Vue.createApp({
         }
     },
 
-    // 定義監聽器
+    // 定義監聽器，要與監聽的屬性維持同樣的名字，不能自定義
     watch:{
         showAnswer(newVal, oldVal) {
             if(newVal){
